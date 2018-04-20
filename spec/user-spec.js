@@ -27,4 +27,9 @@ describe('User', function() {
     user.differenceInSeconds()
     expect(user.userAge).toEqual(851472000);
   })
+
+  it('should return the users age in martian years', function() {
+    user.mercuryAge();
+    expect(user.userAge).toEqual(112.50000000000001);
+  })
 })
