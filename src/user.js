@@ -1,27 +1,26 @@
-// import { Earth } from './earth.js'
-
 class User {
   constructor(userAge) {
-    this.userAge = userAge;
-    this.earth;
+    this.userAge = userAge.getFullYear();
+    this.earth = (365 * 24 * 3600);
     this.mercury;
     this.venus;
     this.mars;
     this.jupiter;
-    this.earthSeconds = (365 * 24 * 3600);
   }
 
   userAgeInSeconds() {
-    let userAge = this.userAge.getFullYear();
-    let userAgeInSeconds = (userAge * this.earthSeconds);
+    let userAgeInSeconds = (this.userAge * this.earth);
     this.userAge = userAgeInSeconds;
   }
 
   differenceInSeconds() {
     let todaysDate = new Date();
-    let userAge = this.userAge;
-    this.userAge = ((todaysDate.getFullYear() * this.earthSeconds) - userAge);
+    this.userAge = ((todaysDate.getFullYear() * this.earth) - this.userAge);
     console.log(this.userAge);
+  }
+
+  mercury() {
+    
   }
 
 }
