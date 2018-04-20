@@ -1,5 +1,6 @@
+// data pulled from https://www.exploratorium.edu/ronh/age/ input: 02/13/1991
+
 import { User } from './../src/user.js';
-// import { Earth } from './../src/earth.js';
 
 describe('User', function() {
   let user;
@@ -28,8 +29,18 @@ describe('User', function() {
     expect(user.userAge).toEqual(851472000);
   })
 
-  it('should return the users age in martian years', function() {
+  it('should return the users age in Mercury years', function() {
     user.mercuryAge();
-    expect(user.userAge).toEqual(112.50000000000001);
+    expect(user.userAge).toEqual(112.50000000000001); //tested against my calculations of 112.8
+  })
+
+  it('should return the users age in Venus years', function() {
+    user.venusAge();
+    expect(user.userAge).toEqual(43.54838709677419); //tested against my calculations of 44.1
+  })
+
+  it('should return the users age in Mars years', function() {
+    user.marsAge();
+    expect(user.userAge).toEqual(14.361702127659576); //tested against my calculations of 14.4
   })
 })
