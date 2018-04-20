@@ -18,13 +18,7 @@ class User {
   }
 
   mercuryAge() {
-    this.userAge = (this.todaysDate.getFullYear() - this.userAge);
-    console.log(this.userAge);
-    let userAge = this.userAge;
-    let mercuryYear = this.mercuryYear;
-    console.log(mercuryYear);
-    this.userAge = ((userAge * 365) / mercuryYear);
-    console.log(this.userAge);
+    this.userAge = (((this.todaysDate.getFullYear() - this.userAge) * 365) / this.mercuryYear);
   }
 
 }
