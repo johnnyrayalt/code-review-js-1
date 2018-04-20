@@ -8,14 +8,20 @@ class User {
     this.venus;
     this.mars;
     this.jupiter;
+    this.earthSeconds = (365 * 24 * 3600);
   }
 
   userAgeInSeconds() {
-    const yearInSeconds = (365 * 24 * 3600);
     let userAge = this.userAge.getFullYear();
-    let userAgeInSeconds = (userAge * yearInSeconds);
+    let userAgeInSeconds = (userAge * this.earthSeconds);
     this.userAge = userAgeInSeconds;
-    console.log(userAgeInSeconds);
+  }
+
+  differenceInSeconds() {
+    let todaysDate = new Date();
+    let userAge = this.userAge;
+    this.userAge = ((todaysDate.getFullYear() * this.earthSeconds) - userAge);
+    console.log(this.userAge);
   }
 
 }

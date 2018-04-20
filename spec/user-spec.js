@@ -21,4 +21,10 @@ describe('User', function() {
     user.userAgeInSeconds();
     expect(user.userAge).toEqual(62788176000);
   })
+
+  it('should return the difference in seconds between todays date and the user birth year', function() {
+    user.userAgeInSeconds();
+    user.differenceInSeconds()
+    expect(user.userAge).toEqual(851472000);
+  })
 })
