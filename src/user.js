@@ -7,6 +7,13 @@ class User {
     this.mars;
     this.jupiter;
   }
+
+
+  // userAgeInSeconds() {
+  //   let date = new Date();
+  //   let userAge = this.userAge;
+  // }
+
 }
 
 export { User };
