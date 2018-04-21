@@ -18,9 +18,9 @@ class User {
     this.userAge = (this.userAge * (this.planets[planets] * 24 * 3600));
   }
 
-  // differenceInSeconds(planets) {
-  //   this.userAge = ((this.todaysDate * this.planets[planets]) - this.userAge);
-  // }
+  differenceInSeconds(planets) {
+    this.userAge = (this.userAge - (this.todaysDate * (this.planets[planets] * 24 * 3600)));
+  }
   //
   // planetsAge(planets) {
   //   this.userAge = (this.age / this.planets[planets]);
