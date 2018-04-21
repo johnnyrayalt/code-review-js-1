@@ -2,50 +2,42 @@ class User {
   constructor(userAge) {
     this.userAge = userAge.getFullYear();
     this.todaysDate = new Date().getFullYear();
-    this.age = ((this.todaysDate - this.userAge) * 365); //users age in years
-    this.earth = (365 * 24 * 3600); //seconds in a year
-    this.mercuryYear = (365 * .24); // 87.6
-    this.venusYear = (365 * .62); // 226.3
-    this.marsYear = (365 * 1.88); // 686.19~
-    this.jupiterYear = (365 * 11.86); // 4328.9
-    this.lifeExpectancy = (79 * 365); //avg life expectancy in the US // 28835
-    this.timeLeft
+    this.age = ((this.todaysDate - this.userAge) * 365); //users age in days
+    this.lifeExpectancy = (79 * 365); //avg life expectancy in the US in days // 28835
+    this.planets = {
+      'earth': 365,
+      'mercury': .24,
+      'venus': .62,
+      'mars': 1.88,
+      'jupiter': 11.86
+    };
+    this.timeLeft;
   }
 
-  userAgeInSeconds() {
-    this.userAge = (this.userAge * this.earth);
+  userAgeInSeconds(planets) {
+    this.userAge = (this.userAge * (this.planets[planets] * 24 * 3600));
   }
 
-  differenceInSeconds() {
-    this.userAge = ((this.todaysDate * this.earth) - this.userAge);
-  }
+  // differenceInSeconds(planets) {
+  //   this.userAge = ((this.todaysDate * this.planets[planets]) - this.userAge);
+  // }
+  //
+  // planetsAge(planets) {
+  //   this.userAge = (this.age / this.planets[planets]);
+  //   console.log(this.userAge);
+  // }
 
-  mercuryAge() {
-    this.userAge = (this.age / this.mercuryYear);
-  }
-
-  venusAge() {
-    this.userAge = (this.age / this.venusYear);
-  }
-
-  marsAge() {
-    this.userAge = (this.age / this.marsYear);
-  }
-
-  jupiterAge() {
-    this.userAge = (this.age / this.jupiterYear);
-  }
-
-  timeLeft(planet) {
-    this.timeLeft = ((this.lifeExpectancy - this.age) / planet);
-
-    this.userAge = this.timeLeft;
-
-  }
-
-
+  // timeLeft(planet) { // (365 * 1.88)
+  //   let planetLifeExpect = (this.lifeExpectancy / (planet * 365)); // ((28835 * 365) / ((365 * 1.88) * 365)) = ~42
+  //   let timeLeft = (planetTime - this.age);
+  //
+  //   console.log(timeLeft);
+  //   // (this.timeLeft >= this.userAge)
+  //
+  //   // this.userAge = this.timeLeft;
+  //
+  // }
 
 
 }
-
 export { User };
