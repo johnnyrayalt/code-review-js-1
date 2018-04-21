@@ -43,4 +43,15 @@ describe('User', function() {
     user.marsAge();
     expect(user.userAge).toEqual(14.361702127659576); //tested against my calculations of 14.4
   })
+
+  it('should return the users age in Jupiter years', function() {
+    user.jupiterAge();
+    expect(user.userAge).toEqual(2.2765598650927488); //tested against my calculations of 2.29
+  })
+
+  it('should return the users time left on Mercury in days', function() {
+    user.mercuryAge()
+    user.timeLeft(mercury);
+    expect(user.userAge).toEqual(0.9018264840182649);
+  })
 })
