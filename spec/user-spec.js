@@ -25,13 +25,13 @@ describe('User', function() {
   it('should return the difference in seconds between todays date and the user birth year', function() {
     user.userAgeInSeconds('earth');
     user.differenceInSeconds('earth');
-    expect(user.userAge).toEqual(-851472000);
+    expect(user.userAge).toEqual(851472000);
   })
 
-  // it('should return the users age in Mercury years', function() {
-  //   user.planets.mercuryAge();
-  //   expect(user.userAge).toEqual(112.50000000000001); //tested against my calculations of 112.8
-  // })
+  it('should return the users age in Mercury years', function() {
+    user.planetsAge('mercury');
+    expect(user.userAge).toEqual(112.50000000000001); //tested against my calculations of 112.8
+  })
 
   // it('should return the users age in Venus years', function() {
   //   user.planets.venusAge();

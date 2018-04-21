@@ -2,7 +2,6 @@ class User {
   constructor(userAge) {
     this.userAge = userAge.getFullYear();
     this.todaysDate = new Date().getFullYear();
-    this.age = ((this.todaysDate - this.userAge) * 365); //users age in days
     this.lifeExpectancy = (79 * 365); //avg life expectancy in the US in days // 28835
     this.planets = {
       'earth': 365,
@@ -19,13 +18,13 @@ class User {
   }
 
   differenceInSeconds(planets) {
-    this.userAge = (this.userAge - (this.todaysDate * (this.planets[planets] * 24 * 3600)));
+    this.userAge = ((this.todaysDate * (this.planets[planets] * 24 * 3600)) - this.userAge);
   }
-  //
-  // planetsAge(planets) {
-  //   this.userAge = (this.age / this.planets[planets]);
-  //   console.log(this.userAge);
-  // }
+
+  planetsAge(planets) {
+    this.userAge = (((this.todaysDate - this.userAge) * 365) / (this.planets[planets] * 365));
+    console.log(this.userAge);
+  }
 
   // timeLeft(planet) { // (365 * 1.88)
   //   let planetLifeExpect = (this.lifeExpectancy / (planet * 365)); // ((28835 * 365) / ((365 * 1.88) * 365)) = ~42
