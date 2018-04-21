@@ -48,9 +48,27 @@ describe('User', function() {
     expect(user.userAge).toEqual(2.2765598650927488); //tested against my calculations of 2.29
   })
 
-  // it('should return the users time left on Mercury in days', function() {
-  //   planets= user.jupiterYear;
-  //   user.timeLeft(planet);
-  //   expect(user.userAge).toEqual(216.66666666666669);
-  // })
+  it('should return the users time left on Mercury in years', function() {
+    user.planetsAge('mercury');
+    user.timeLeft('mercury');
+    expect(user.userAge).toEqual(216.66666666666669);
+  })
+
+  it('should return the users time left on Venus in years', function() {
+    user.planetsAge('venus');
+    user.timeLeft('venus');
+    expect(user.userAge).toEqual(83.87096774193547);
+  })
+
+  it('should return the users time left on Mars in years', function() {
+    user.planetsAge('mars');
+    user.timeLeft('mars');
+    expect(user.userAge).toEqual(27.65957446808511);
+  })
+
+  it('should return the users time left on Jupiter in years', function() {
+    user.planetsAge('jupiter');
+    user.timeLeft('jupiter');
+    expect(user.userAge).toEqual(4.384485666104554);
+  })
 })

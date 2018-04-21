@@ -26,16 +26,11 @@ class User {
     console.log(this.userAge);
   }
 
-  // timeLeft(planet) { // (365 * 1.88)
-  //   let planetLifeExpect = (this.lifeExpectancy / (planet * 365)); // ((28835 * 365) / ((365 * 1.88) * 365)) = ~42
-  //   let timeLeft = (planetTime - this.age);
-  //
-  //   console.log(timeLeft);
-  //   // (this.timeLeft >= this.userAge)
-  //
-  //   // this.userAge = this.timeLeft;
-  //
-  // }
+  timeLeft(planets) { // (365 * 1.88)
+    const lifeExpectancyOnPlanet = (this.lifeExpectancy / (this.planets[planets] * 365)) // avg life expectancy on mercury is 329.1666666666667 years
+    this.userAge = (lifeExpectancyOnPlanet - this.userAge);
+    console.log(this.userAge);
+  }
 
 
 }
