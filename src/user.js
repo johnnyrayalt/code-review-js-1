@@ -2,7 +2,7 @@ class User {
   constructor(userAge) {
     this.userAge = userAge.getFullYear();
     this.todaysDate = new Date().getFullYear();
-    this.lifeExpectancy = (79 * 365); //avg life expectancy in the US in days // 28835
+    this.lifeExpectancy = 79;
     this.planets = {
       'earth': 365,
       'mercury': .24,
@@ -22,14 +22,13 @@ class User {
   }
 
   planetsAge(planets) {
-    this.userAge = (((this.todaysDate - this.userAge) * 365) / (this.planets[planets] * 365));
-    console.log(this.userAge);
+    this.userAge = (((this.todaysDate - this.userAge)) / (this.planets[planets]));
   }
 
-  timeLeft(planets) { // (365 * 1.88)
-    const lifeExpectancyOnPlanet = (this.lifeExpectancy / (this.planets[planets] * 365)) // avg life expectancy on mercury is 329.1666666666667 years
+  timeLeft(planets) {
+    const lifeExpectancyOnPlanet = (this.lifeExpectancy / (this.planets[planets]))
     this.userAge = (lifeExpectancyOnPlanet - this.userAge);
-    console.log(this.userAge);
+    this.userAge <= 0 ? (this.timeLeft = "nope") : (this.timeLeft = this.userAge);
   }
 
 
