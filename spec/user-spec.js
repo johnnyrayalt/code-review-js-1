@@ -5,6 +5,7 @@ import { User } from './../src/user.js';
 describe('User', function() {
   let user;
   let userString;
+  let planet;
 
   beforeEach(function() {
     let input = new Date('1991', '1', '13');
@@ -50,8 +51,8 @@ describe('User', function() {
   })
 
   it('should return the users time left on Mercury in days', function() {
-    user.mercuryAge()
-    user.timeLeft(mercury);
-    expect(user.userAge).toEqual(0.9018264840182649);
+    planet = user.mercuryYear;
+    user.timeLeft(planet);
+    expect(user.userAge).toEqual(216.66666666666669);
   })
 })
